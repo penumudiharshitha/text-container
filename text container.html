@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            background-image: url('https://tse3.mm.bing.net/th?id=OIP.L8CvmxOgLZI0y8z2mhY35gHaEO&pid=Api&P=0&h=180'); /* Background image URL */
+            background-size: cover; /* Ensure the image covers the entire viewport */
+            background-position: center; /* Center the image */
+            background-repeat: no-repeat; /* Prevent the image from repeating */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 500px; /* Increased width */
+            height: 300px; /* Increased height */
+            background-color: lightblue;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
+            padding: 20px; /* Add padding to create space around the text */
+            text-align: center; /* Center the text */
+            font-family: 'Georgia', serif; /* Change font style */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-family: 'Arial', sans-serif; /* Font style for the button */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="container">
+    <p id="text">I am Harshitha, currently pursuing B.Tech in Computer Science and Engineering (CSE) at Vignan's University.</p>
+</div>
+<button id="toggleButton">Press Me!</button>
+
+<script>
+    const button = document.getElementById('toggleButton');
+    const container = document.getElementById('container');
+    const text = document.getElementById('text');
+
+    let isToggled = false;
+
+    button.addEventListener('click', () => {
+        if (!isToggled) {
+            button.textContent = "Pressed!";
+            button.style.backgroundColor = "green";
+            button.style.color = "white";
+            container.style.backgroundColor = "lightcoral";
+            text.textContent = "My aim is to become an outstanding software engineer.";
+        } else {
+            button.textContent = "Press Me!";
+            button.style.backgroundColor = "";
+            button.style.color = "";
+            container.style.backgroundColor = "lightblue";
+            text.textContent = "My hobbies include dancing and sleeping.";
+        }
+        isToggled = !isToggled;
+    });
+</script>
+
+</body>
+</html>
